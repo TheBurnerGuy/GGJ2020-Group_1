@@ -5,9 +5,15 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprite>sprites\example_tile1</sprite>
+    <sprite>sprites\example_tile2</sprite>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\macros.gml</script>
+  </scripts>
   <help>
     <rtf>help.rtf</rtf>
   </help>
