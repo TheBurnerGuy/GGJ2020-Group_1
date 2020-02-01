@@ -9,11 +9,30 @@
     <sprite>sprites\example_tile1</sprite>
     <sprite>sprites\example_tile2</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\example_tileset</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\macros.gml</script>
+    <script>scripts\enums.gml</script>
+    <script>scripts\TileToScreenX.gml</script>
+    <script>scripts\TileToScreenY.gml</script>
   </scripts>
+  <objects name="objects">
+    <object>objects\oRender</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\test_room</room>
+  </rooms>
+  <constants number="7">
+    <constant name="FLOOR_D">0</constant>
+    <constant name="MAP_W">8</constant>
+    <constant name="MAP_H">24</constant>
+    <constant name="TILE_W">128</constant>
+    <constant name="TILE_H">64</constant>
+    <constant name="ROOM_W">1024</constant>
+    <constant name="ROOM_H">768</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
