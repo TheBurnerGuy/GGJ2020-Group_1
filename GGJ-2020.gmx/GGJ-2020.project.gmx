@@ -24,7 +24,7 @@
   <rooms name="rooms">
     <room>rooms\test_room</room>
   </rooms>
-  <constants number="7">
+  <constants number="9">
     <constant name="FLOOR_D">0</constant>
     <constant name="MAP_W">8</constant>
     <constant name="MAP_H">24</constant>
@@ -32,6 +32,8 @@
     <constant name="TILE_H">64</constant>
     <constant name="ROOM_W">1024</constant>
     <constant name="ROOM_H">768</constant>
+    <constant name="ROOM_TILE_W">128</constant>
+    <constant name="ROOM_TILE_H">128</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// @desc Build the map
+            <string>//Moved to room creation code
+
+/// @desc Build the map
 /// Copying this youtube tutorial, but converting commands to 1.4
 /// URL: https://www.youtube.com/watch?v=BIq2pw6IZ14
 
@@ -35,19 +37,23 @@ global.theMap = ds_grid_create(MAP_W, MAP_H);
 
 var tileMap = tile_get_ids_at_depth(FLOOR_D);
 
-var num = tile_get_count();
 for (var tX = 0; tX &lt; MAP_W; tX++) {
     for (var tY = 0; tY &lt; MAP_H; tY++) {
-        var tileId = tile_layer_find(FLOOR_D, tX, tY);
+        // Translation from tutorial
+        // GMK 2 has tile maps, we have to convert tX and tY to coordinates here
+        var tileId = tile_layer_find(FLOOR_D, tX * ROOM_TILE_W, tY * ROOM_TILE_H);
         //Format: [Sprite, Z]
-        thisTile[0] = -1;
-        thisTile[1] = 0; 
+        var thisTile = array_create(2);
+        thisTile[0] = tileId;
+        thisTile[1] = 0;
         
-        if !tileId {
-            thisTile[TILE.SPRITE] = tileId;
-            thisTile[TILE.Z] = 0;
+        if (tileId != -1) {
+            thisTile[0] = tileId; //TILE.SPRITE
+            thisTile[1] = 0; //TILE.Z
         }
-        global.theMap[# tX, tY] = thisTile;
+        ds_grid_set(global.theMap, tX, tY, thisTile);
+        var lol = ds_grid_get(global.theMap, tX, tY);
+        var xD = 2;
     }
 }
 
@@ -94,11 +100,11 @@ for (var tX = 0; tX &lt; MAP_W; tX++) {
           <argument>
             <kind>1</kind>
             <string>/// @desc Render game
-var tileData, roomX, roomY, tileIndex, tileZ;
+var roomX, roomY, tileIndex, tileZ;
 
 for (var tX = 0; tX &lt; MAP_W; tX++) {
     for (var tY = 0; tY &lt; MAP_H; tY++) {
-        tileData = global.theMap[# tX, tY];
+        var tileData = ds_grid_get(global.theMap, tX, tY);
         roomX = TileToScreenX(tX, tY);
         roomY = TileToScreenY(tX, tY);
         
@@ -106,7 +112,7 @@ for (var tX = 0; tX &lt; MAP_W; tX++) {
         tileIndex = tileData[TILE.SPRITE]
         tileZ = tileData[TILE.Z]
         
-        if (tileIndex != 0) draw_sprite(example_tile2, 0, roomX, roomY + tileZ)
+        if (tileIndex != 0 and tileIndex != -1) draw_sprite(example_tile2, 0, roomX, roomY + tileZ)
     }
 }
 </string>
