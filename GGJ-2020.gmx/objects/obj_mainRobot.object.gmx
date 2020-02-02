@@ -69,6 +69,9 @@
 
 // carrying_item = true when robot is carrying an item
 carrying_item = false;
+
+// item_checkpoint - decides which treasure to make appear next
+item_checkpoint = 0;
 </string>
           </argument>
         </arguments>
@@ -119,10 +122,26 @@ if (!place_meeting(new_x, new_y, obj_wall)) {
 }
 
 // Collision with treasure
+// Pick it up and spawn all the related objects
 if (place_meeting(new_x, new_y, obj_treasure) and carrying_item == false) {
     treasureIndex = instance_place(new_x, new_y, obj_treasure);
     carrying_item = true;
-    instance_create(self.x, self.y, obj_treasureHolding);
+    treasureHoldingIndex = instance_create(self.x, self.y, obj_treasureHolding);
+    
+    // Setup tower interactable - it will find its own location
+    instance_create(0, 0, obj_towerInteractive);
+    
+    // Get treasure sprite and image_index for treasureHolding before destroying found treasure
+    with (treasureIndex) {
+        other.treasureSpriteIndex = sprite_index;
+        other.treasureImageIndex = image_index;
+    }
+    
+    with (treasureHoldingIndex) {
+        sprite_index = other.treasureSpriteIndex;
+        image_index = other.treasureImageIndex;
+    }
+    
     with (treasureIndex) {
         instance_destroy();
     }

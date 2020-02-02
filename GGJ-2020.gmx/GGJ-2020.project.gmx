@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_treasureHole</sprite>
+    <sprite>sprites\spr_nonClickable</sprite>
     <sprite>sprites\spr_floors</sprite>
     <sprite>sprites\spr_walls</sprite>
     <sprite>sprites\spr_main_robot</sprite>
@@ -16,6 +17,8 @@
     <sprite>sprites\spr_towerFloor</sprite>
     <sprite>sprites\spr_treasure</sprite>
     <sprite>sprites\spr_treasureHead</sprite>
+    <sprite>sprites\spr_shinyInteraction</sprite>
+    <sprite>sprites\spr_ending</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floors</background>
@@ -41,9 +44,12 @@
     <object>objects\obj_treasure</object>
     <object>objects\obj_treasureHole</object>
     <object>objects\obj_treasureHolding</object>
+    <object>objects\obj_towerInteractive</object>
+    <object>objects\obj_endcg</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_THE</room>
+    <room>rooms\room_end</room>
   </rooms>
   <constants number="9">
     <constant name="FLOOR_D">10</constant>
