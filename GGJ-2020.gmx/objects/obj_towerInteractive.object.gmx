@@ -31,32 +31,32 @@
 with (instance_nearest(0, 0, obj_tower)) {
     switch (image_index) {
         case 0:
-            other.x = self.x - 274;
-            other.y = self.y - 1297;
+            other.x = self.x - 9;
+            other.y = self.y - 1116;
             break;
         case 1:
-            other.x = self.x - 802;
-            other.y = self.y - 751;
+            other.x = self.x - 594;
+            other.y = self.y - 521;
             break;
         case 2:
-            other.x = self.x - 132;
-            other.y = self.y - 499;
+            other.x = self.x + 144;
+            other.y = self.y - 245;
             break;
         case 3:
-            other.x = self.x - 128;
-            other.y = self.y - 935;
+            other.x = self.x + 151;
+            other.y = self.y - 728;
             break;
         case 4:
-            other.x = self.x - 22;
-            other.y = self.y - 1161;
+            other.x = self.x + 264;
+            other.y = self.y - 978;
             break;
         case 5:
-            other.x = self.x + 16;
-            other.y = self.y - 1454;
+            other.x = self.x + 15;
+            other.y = self.y - 1451;
             break;
         case 6:
-            other.x = self.x - 170;
-            other.y = self.y - 1056;
+            other.x = self.x - 163;
+            other.y = self.y - 1061;
             break;
         default:
             // How did you get here?

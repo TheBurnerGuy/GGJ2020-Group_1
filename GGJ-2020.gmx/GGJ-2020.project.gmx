@@ -150,6 +150,14 @@
     <sprite>sprites\spr_shinyInteraction</sprite>
     <sprite>sprites\spr_ending</sprite>
     <sprite>sprites\spr_treasure</sprite>
+    <sprite>sprites\spr_marker1</sprite>
+    <sprite>sprites\spr_marker2</sprite>
+    <sprite>sprites\spr_marker3_1</sprite>
+    <sprite>sprites\spr_marker3_2</sprite>
+    <sprite>sprites\spr_marker3_3</sprite>
+    <sprite>sprites\spr_healthBar</sprite>
+    <sprite>sprites\spr_bloodPuddle</sprite>
+    <sprite>sprites\spr_bloodFall</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floors</background>
@@ -178,6 +186,10 @@
     <object>objects\obj_towerInteractive</object>
     <object>objects\obj_endcg</object>
     <object>objects\obj_soundDirector</object>
+    <object>objects\obj_marker</object>
+    <object>objects\obj_bloodRegen</object>
+    <object>objects\obj_bloodFall</object>
+    <object>objects\screwthisOBJ</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_THE</room>
