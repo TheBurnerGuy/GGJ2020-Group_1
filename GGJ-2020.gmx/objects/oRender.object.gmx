@@ -25,13 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Moved to room creation code
-
-/// @desc Build the map
+            <string>/// @desc Build the map
 /// Copying this youtube tutorial, but converting commands to 1.4
 /// URL: https://www.youtube.com/watch?v=BIq2pw6IZ14
 
-tile_layer_hide(FLOOR_D); // Floor depth is 0
+tile_layer_hide(FLOOR_D); // Floor depth is 10 currently
 
 global.theMap = ds_grid_create(MAP_W, MAP_H);
 
@@ -52,37 +50,63 @@ for (var tX = 0; tX &lt; MAP_W; tX++) {
             thisTile[1] = 0; //TILE.Z
         }
         ds_grid_set(global.theMap, tX, tY, thisTile);
-        var lol = ds_grid_get(global.theMap, tX, tY);
-        var xD = 2;
+        //var lol = ds_grid_get(global.theMap, tX, tY);
+        //var xD = 2;
     }
 }
-
-//for (var i = 0; i &lt; num; i++) {
-//    for (var k = 0; i &lt; array_length_1d(tileMap); i++) {
-//        // Check if we're looking at a ground tile
-//        if (tile_get_id(i) == tileMap[k]) {
-//            // Array format: [Sprite, Z]
-//            thisTile[0] = -1;
-//            thisTile[1] = 0;
-//            // TILE.SPRITE holds the tile index
-//            thisTile[TILE.SPRITE] = i;
-//            thisTile[TILE.Z] = 0;
-//            tX = tile_get_x(i);
-//            tY = tile_get_y(i);
-//            global.theMap[# tX, tY] = thisTile;
-//            break
-//        }
-//    }
-//}
-
-
 
 </string>
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// @desc Create walls
+var roomX, roomY, tileIndex, tileZ;
+
+for (var tX = 0; tX &lt; MAP_W; tX++) {
+    for (var tY = 0; tY &lt; MAP_H; tY++) {
+        var tileData = ds_grid_get(global.theMap, tX, tY);
+        roomX = TileToScreenX(tX, tY);
+        roomY = TileToScreenY(tX, tY);
+        
+        //TODO: Remove tileIndex?
+        tileIndex = tileData[TILE.SPRITE]
+        tileZ = tileData[TILE.Z]
+        
+        if (tileIndex != 0 and tileIndex != -1) {
+            // Walls instance creation - for collision
+            if (tile_get_background(tileIndex) == bg_walls) {
+                var new_wall = instance_create(roomX, roomY, obj_wall);
+                with(new_wall) {
+                    // Pretty much a copy pasta from draw_begin code
+                    sprite_index = spr_floors;
+                    image_index = 0;
+                }
+            }
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="72">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -112,7 +136,16 @@ for (var tX = 0; tX &lt; MAP_W; tX++) {
         tileIndex = tileData[TILE.SPRITE]
         tileZ = tileData[TILE.Z]
         
-        if (tileIndex != 0 and tileIndex != -1) draw_sprite(example_tile2, 0, roomX, roomY + tileZ)
+        if (tileIndex != 0 and tileIndex != -1) {
+            // Floor tiles
+            if (tile_get_background(tileIndex) == bg_floors) {
+                draw_sprite(spr_floors, 0, roomX, roomY + tileZ)
+            }
+            // Wall tiles 
+            else if (tile_get_background(tileIndex) == bg_walls) {
+                draw_sprite(spr_walls, 0, roomX, roomY + tileZ)
+            }
+        }
     }
 }
 </string>

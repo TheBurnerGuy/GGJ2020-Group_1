@@ -677,14 +677,5 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
     <option_xbone_title_id>1234ABCD</option_xbone_title_id>
   </Options>
-  <ConfigConstants>
-    <constants number="6">
-      <constant name="MAP_W">8</constant>
-      <constant name="MAP_H">24</constant>
-      <constant name="TILE_W">128</constant>
-      <constant name="TILE_H">64</constant>
-      <constant name="ROOM_W">1024</constant>
-      <constant name="ROOM_H">768</constant>
-    </constants>
-  </ConfigConstants>
+  <ConfigConstants/>
 </Config>

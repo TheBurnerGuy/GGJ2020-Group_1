@@ -6,34 +6,54 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\example_tile1</sprite>
-    <sprite>sprites\example_tile2</sprite>
+    <sprite>sprites\spr_treasureHole</sprite>
+    <sprite>sprites\spr_floors</sprite>
+    <sprite>sprites\spr_walls</sprite>
+    <sprite>sprites\spr_main_robot</sprite>
+    <sprite>sprites\spr_tower</sprite>
+    <sprite>sprites\spr_bunny</sprite>
+    <sprite>sprites\spr_bunnyHole</sprite>
+    <sprite>sprites\spr_towerFloor</sprite>
+    <sprite>sprites\spr_treasure</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\example_tileset</background>
+    <background>background\bg_floors</background>
+    <background>background\bg_walls</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\enums.gml</script>
     <script>scripts\TileToScreenX.gml</script>
     <script>scripts\TileToScreenY.gml</script>
+    <script>scripts\ScreenToTIleX.gml</script>
+    <script>scripts\ScreenToTileY.gml</script>
+    <script>scripts\scr_object_start_pos.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oRender</object>
+    <object>objects\obj_mainRobot</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_tower</object>
+    <object>objects\obj_bunny</object>
+    <object>objects\obj_clickObject</object>
+    <object>objects\obj_bunnyHole</object>
+    <object>objects\obj_treasure</object>
+    <object>objects\obj_treasureHole</object>
+    <object>objects\obj_treasureHolding</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\test_room</room>
+    <room>rooms\room_THE</room>
   </rooms>
   <constants number="9">
-    <constant name="FLOOR_D">0</constant>
-    <constant name="MAP_W">8</constant>
-    <constant name="MAP_H">24</constant>
-    <constant name="TILE_W">128</constant>
-    <constant name="TILE_H">64</constant>
-    <constant name="ROOM_W">1024</constant>
-    <constant name="ROOM_H">768</constant>
-    <constant name="ROOM_TILE_W">128</constant>
-    <constant name="ROOM_TILE_H">128</constant>
+    <constant name="FLOOR_D">10</constant>
+    <constant name="MAP_W">32</constant>
+    <constant name="MAP_H">64</constant>
+    <constant name="TILE_W">256</constant>
+    <constant name="TILE_H">128</constant>
+    <constant name="ROOM_W">8192</constant>
+    <constant name="ROOM_H">8192</constant>
+    <constant name="ROOM_TILE_W">256</constant>
+    <constant name="ROOM_TILE_H">256</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
