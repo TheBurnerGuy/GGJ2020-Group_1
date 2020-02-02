@@ -3,8 +3,138 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="7" name="datafiles">
+    <datafile>
+      <name>sonar_Dma7_1.ogg</name>
+      <exists>-1</exists>
+      <size>278077</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>sonar_Dma7_1.ogg</filename>
+    </datafile>
+    <datafile>
+      <name>sonar_B7_1.ogg</name>
+      <exists>-1</exists>
+      <size>278063</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>sonar_B7_1.ogg</filename>
+    </datafile>
+    <datafile>
+      <name>sonar_Dma9_1.ogg</name>
+      <exists>-1</exists>
+      <size>278078</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>sonar_Dma9_1.ogg</filename>
+    </datafile>
+    <datafile>
+      <name>sonar_Emi_1.ogg</name>
+      <exists>-1</exists>
+      <size>278780</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>sonar_Emi_1.ogg</filename>
+    </datafile>
+    <datafile>
+      <name>sonar_Fdim7_1.ogg</name>
+      <exists>-1</exists>
+      <size>278789</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>sonar_Fdim7_1.ogg</filename>
+    </datafile>
+    <datafile>
+      <name>sonar_Gma7_1.ogg</name>
+      <exists>-1</exists>
+      <size>278065</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>sonar_Gma7_1.ogg</filename>
+    </datafile>
+    <datafile>
+      <name>Whispers_2.ogg</name>
+      <exists>-1</exists>
+      <size>349354</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Whispers_2.ogg</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_mainAmbience</sound>
+    <sound>sound\snd_emi1</sound>
+    <sound>sound\snd_dma7</sound>
+    <sound>sound\snd_b7</sound>
+    <sound>sound\snd_gma7</sound>
+    <sound>sound\snd_dma9</sound>
+    <sound>sound\snd_fdim7</sound>
+    <sound>sound\snd_whispers</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_treasureHole</sprite>
     <sprite>sprites\spr_nonClickable</sprite>
@@ -46,6 +176,7 @@
     <object>objects\obj_treasureHolding</object>
     <object>objects\obj_towerInteractive</object>
     <object>objects\obj_endcg</object>
+    <object>objects\obj_soundDirector</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_THE</room>

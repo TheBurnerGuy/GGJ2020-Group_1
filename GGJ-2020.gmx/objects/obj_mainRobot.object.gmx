@@ -72,6 +72,12 @@ carrying_item = false;
 
 // item_checkpoint - decides which treasure to make appear next
 item_checkpoint = 0;
+
+// delay movement from sonar
+sonar_delay = -1;
+
+// sonar cooldown until next use
+sonar_cooldown = -1;
 </string>
           </argument>
         </arguments>
@@ -98,7 +104,7 @@ item_checkpoint = 0;
 
 var move_horizontal = 0;
 var move_vertical = 0;
-var movement_speed = 5;
+var movement_speed = 7;
 
 if (keyboard_check(ord('A'))) {
     move_horizontal += -1;
@@ -116,7 +122,7 @@ if (keyboard_check(ord('S'))) {
 var new_x = self.x + (movement_speed * move_horizontal);
 var new_y = self.y + (movement_speed * move_vertical);
 
-if (!place_meeting(new_x, new_y, obj_wall)) {
+if (!place_meeting(new_x, new_y, obj_wall) and sonar_delay &lt; 0) {
     self.x = new_x;
     self.y = new_y;
 }
@@ -145,6 +151,50 @@ if (place_meeting(new_x, new_y, obj_treasure) and carrying_item == false) {
     with (treasureIndex) {
         instance_destroy();
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// @desc Sonar - spacebar
+
+var max_sonar_delay = 50;
+var max_sonar_cooldown = 300; // 10 seconds-ish
+sonar_active = false;
+
+// Sending a state out to the sound director
+if (sonar_active == true) {
+    sonar_active = false;
+}
+
+if (keyboard_check_pressed(vk_space) and sonar_cooldown &lt; 0) {
+    sonar_delay = max_sonar_delay;
+    sonar_cooldown = max_sonar_cooldown;
+    sonar_active = true;
+}
+
+if (sonar_delay &gt;= 0) {
+    sonar_delay += -1;
+}
+
+if (sonar_cooldown &gt;= 0) {
+    sonar_cooldown += -1;
 }
 </string>
           </argument>
