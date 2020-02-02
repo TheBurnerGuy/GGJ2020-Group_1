@@ -145,10 +145,11 @@
     <sprite>sprites\spr_bunny</sprite>
     <sprite>sprites\spr_bunnyHole</sprite>
     <sprite>sprites\spr_towerFloor</sprite>
-    <sprite>sprites\spr_treasure</sprite>
+    <sprite>sprites\spr_oldtreasure</sprite>
     <sprite>sprites\spr_treasureHead</sprite>
     <sprite>sprites\spr_shinyInteraction</sprite>
     <sprite>sprites\spr_ending</sprite>
+    <sprite>sprites\spr_treasure</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floors</background>
