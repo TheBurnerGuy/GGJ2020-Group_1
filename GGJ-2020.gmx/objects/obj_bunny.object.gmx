@@ -113,11 +113,13 @@ return_item = false;
             <kind>1</kind>
             <string>///@desc Move Bunny
 
-min_dist = 300;
-super_fast_mspeed = 20;
-fast_mspeed = 15;
-norm_mspeed = 12;
 main_robot = instance_nearest(self.x, self.y, obj_mainRobot);
+var speed_hacks = main_robot.speed_hacks
+
+min_dist = 300;
+super_fast_mspeed = 25 + (speed_hacks * 50);
+fast_mspeed = 21 + (speed_hacks * 50);
+norm_mspeed = 17 + (speed_hacks * 50);
 
 // Follow Code BEGIN
 if (mode == BUNNY_MODE.FOLLOW 
