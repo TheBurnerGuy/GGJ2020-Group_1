@@ -140,7 +140,7 @@
     <sprite>sprites\spr_nonClickable</sprite>
     <sprite>sprites\spr_floors</sprite>
     <sprite>sprites\spr_walls</sprite>
-    <sprite>sprites\spr_main_robot</sprite>
+    <sprite>sprites\spr_main_robotF</sprite>
     <sprite>sprites\spr_tower</sprite>
     <sprite>sprites\spr_bunny</sprite>
     <sprite>sprites\spr_bunnyHole</sprite>
@@ -158,6 +158,12 @@
     <sprite>sprites\spr_healthBar</sprite>
     <sprite>sprites\spr_bloodPuddle</sprite>
     <sprite>sprites\spr_bloodFall</sprite>
+    <sprite>sprites\spr_endingGif</sprite>
+    <sprite>sprites\spr_main_robotB</sprite>
+    <sprite>sprites\spr_main_robot_walkF</sprite>
+    <sprite>sprites\spr_main_robot_walkB</sprite>
+    <sprite>sprites\spr_main_robot_sonarB</sprite>
+    <sprite>sprites\spr_main_robot_sonarF</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_floors</background>
@@ -197,12 +203,12 @@
   </rooms>
   <constants number="9">
     <constant name="FLOOR_D">10</constant>
-    <constant name="MAP_W">32</constant>
-    <constant name="MAP_H">64</constant>
+    <constant name="MAP_W">96</constant>
+    <constant name="MAP_H">192</constant>
     <constant name="TILE_W">256</constant>
     <constant name="TILE_H">128</constant>
-    <constant name="ROOM_W">8192</constant>
-    <constant name="ROOM_H">8192</constant>
+    <constant name="ROOM_W">24576</constant>
+    <constant name="ROOM_H">24576</constant>
     <constant name="ROOM_TILE_W">256</constant>
     <constant name="ROOM_TILE_H">256</constant>
   </constants>
